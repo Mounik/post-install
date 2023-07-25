@@ -1,0 +1,91 @@
+---
+
+base_archiving_tools:
+  - unzip
+
+base_productivity_tools:
+  - libreoffice
+
+base_system_tools:
+  - gnome-calculator
+  - gufw
+
+base_system_tools_laptop:
+  - tlp
+  - tlp-rdw
+
+base_download_tools:
+  - transmission
+  - wget
+  - youtube-dl
+
+base_developer_tools:
+  - 2to3
+  - ansible
+  - ansible-lint
+  - black
+  - colordiff
+  - curl
+  - default-jre-headless
+  - dos2unix
+  - filezilla
+  - fonts-powerline
+  - gedit-plugins
+  - ghostwriter
+  - git
+  - git-extras
+  - gitg
+  - golang-go
+  - htop
+  - netcat
+  - nmap
+  - nodejs
+  - pandoc
+  - parallel
+  - pep8
+  - pylint
+  - python3-cachecontrol
+  - python3-demjson
+  - python3-jmespath
+  - python3-pep8
+  - python3-pip
+  - python3-poetry
+  - rclone
+  - remmina
+  - rename
+  - ruby
+  - ruby-dev
+  - shellcheck
+  - sshpass
+  - tilix
+  - tree
+  - tmux
+  - uget
+  - yamllint
+
+base_developer_tools_pip3:
+  - tldr
+
+base_virtualization_tools:
+  # - virtualbox
+  # - virtualbox-ext-pack
+  - docker.io
+  - docker-compose
+  - podman
+
+base_media_tools:
+  - ffmpeg
+  - gimp
+  - imagemagick
+  - totem
+#  - ubuntu-restricted-extras
+  - vlc
+
+base_permanent_night_light:
+  night_light_enabled: False              # set this to True for permanently turning on night light
+  night_light_schedule_automatic: False
+  night_light_schedule_from: 0
+  night_light_schedule_to: 24
+  night_light_temperature: 4200
+
+...
