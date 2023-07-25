@@ -30,57 +30,57 @@ Je suis un ingénieur DevSecOps (axé sur Linux) et mon travail quotidien consis
 Résumé des packages installés et configurés en fonction des rôles :
 
 - **role: base**
-  - monter `/tmp` sur tmpfs (réduire les écritures en lecture SSD et augmenter la durée de vie du SSD ; pas de fichiers restants à l'arrêt du système)
-  - définir l'éditeur système par défaut sur vim au lieu de nano
-  - activer le pare-feu ufw et installer l'interface graphique ufw gufw
-  - désactiver les rapports de plantage du système
-  - régler le swap du système afin que le swapping soit considérablement réduit
-  - mettre à niveau tous les packages
-  - installer des outils d'archivage comme zip, rar, etc.
-  - installer libreoffice
-  - installer des outils de gestion de l'alimentation comme [TLP](https://github.com/linrunner/TLP)
-  - installer des packages liés au développement tels que docker, podman, filezilla, golang, pipenv, etc.
-  - configurer les répertoires golang
-  - installer des outils de téléchargement comme transmission, wget
-  - installer des packages image, audio et vidéo comme vlc, gimp, imagemagick.
-  - installer des outils de virtualisation comme virtualbox, docker, docker-compose
-  - installer et configurer le serveur ssh s'il n'est pas défini sur `laptop_mode`
-  - possibilité d'activer les paramètres de luminosité pour le confort des yeux (régler `base_permanent_night_light.night_light_enabled` à `True`)
+  - Monte `/tmp` sur tmpfs (réduire les écritures en lecture SSD et augmenter la durée de vie du SSD ; pas de fichiers restants à l'arrêt du système)
+  - Définit l'éditeur système par défaut sur vim au lieu de nano
+  - Activerle pare-feu ufw et installe l'interface graphique ufw gufw
+  - Désactive les rapports de plantage du système
+  - Régle le swap du système afin que le swapping soit considérablement réduit
+  - Mise à niveau tde ous les packages
+  - Installe des outils d'archivage comme zip, rar, etc.
+  - Installe libreoffice
+  - Installe des outils de gestion d'alimentation comme [TLP](https://github.com/linrunner/TLP)
+  - Installe des packages liés au développement tels que docker, podman, filezilla, golang, pipenv, etc.
+  - Configure les répertoires golang
+  - Installerdes outils de téléchargement comme transmission, wget
+  - Installe des packages image, audio et vidéo comme vlc, gimp, imagemagick.
+  - Installe des outils de virtualisation comme virtualbox, docker, docker-compose, podman
+  - Installe et configure le serveur ssh s'il n'est pas défini sur `laptop_mode`
+  - Possibilité d'activer les paramètres de luminosité pour le confort des yeux (régler `base_permanent_night_light.night_light_enabled` à `True`)
 
 - **role: hashicorp**
-  - installer vagrant et terraform
+  - Installe vagrant et terraform
 - **role: terminal_customizations**
-  - téléchargez et installez des polices à partir de ryanoasis/nerd-fonts ; ce sont des polices mono idéales pour une utilisation dans les éditeurs de terminaux ou de programmation
-  - copier et activer un exemple de fichier de configuration tilix avec la police nerd configurée
+  - Télécharge et installe des polices à partir de ryanoasis/nerd-fonts ; ce sont des polices mono idéales pour une utilisation dans les éditeurs de terminaux ou de programmation
+  - Copie et active un exemple de fichier de configuration tilix avec la police nerd configurée
 - **role: vim**
-  - installer les paquets vim
-  - installer amix/vimrc distribution vim
-  - créer un exemple de fichier de personnalisation vim dans `~/.vim_runtime/my_configs.vim`
-    - des paramètres vim supplémentaires sont activés dans `~/.vim_runtime/my_configs.vim` qui ne font pas partie de la distribution Vim. Modifiez ce fichier si nécessaire.
+  - Installe les paquets vim
+  - Installe amix/vimrc distribution vim
+  - Crée un exemple de fichier de personnalisation vim dans `~/.vim_runtime/my_configs.vim`
+    - Paramètres vim supplémentaires activés dans `~/.vim_runtime/my_configs.vim` qui ne font pas partie de la distribution Vim. Modifiez ce fichier si nécessaire.
 - **role: zsh**
-  - installez le package zsh et définissez le shell utilisateur sur zsh
-  - installer le gestionnaire de plugin antigen zsh
-  - copier et activer `~/.zshrc` fichier s'il n'existe pas
-    - contient une fonction pour empêcher ssh-agent de demander à plusieurs reprises le mot de passe de la clé ssh cryptée lors du lancement d'un nouveau terminal
-  - installez ohmyzsh/ohmyzsh et activez certains plugins
-  - activer le thème zsh powerlevel10k
+  - Installe le package zsh et définit le shell utilisateur sur zsh
+  - Installe le gestionnaire de plugin antigen zsh
+  - Copie et active `~/.zshrc` s'il n'existe pas
+    - Contient une fonction pour empêcher ssh-agent de demander à plusieurs reprises le mot de passe de la clé ssh cryptée lors du lancement d'un nouveau terminal
+  - Installe ohmyzsh/ohmyzsh et active certains plugins
+  - Active le thème zsh powerlevel10k
 - **role: googlechrome**
-  - ajouter le référentiel Google Chrome apt
-  - installer Google Chrome
+  - Ajoute le référentiel Google Chrome apt
+  - Installe Google Chrome
 - **role: vscode**
-  - ajouter le référentiel apt Visual Studio Code
-  - installer Visual Studio Code
-  - installer certaines extensions populaires de Visual Studio Code
+  - Ajoute le référentiel apt Visual Studio Code
+  - Installe Visual Studio Code
+  - Installe certaines extensions populaires de Visual Studio Code
 - **role: privacy**
-  - installer tor
-  - configurer tor pour qu'il s'exécute au démarrage et empêche l'utilisation de certains pays comme nœuds de sortie
-    - editer `/etc/tor/torrc` si nécessaire
-  - installer proxychains
-  - configurer les proxychains pour utiliser tor. Voir [my Medium story](https://fazlearefin.medium.com/tunneling-traffic-over-tor-network-using-proxychains-34c77ec32c0f) pour voir comment l'utiliser
-    - editer `/etc/proxychains4.conf` si nécessaire
-  - installer la boîte à outils d'anonymisation des métadonnées
+  - Installe tor
+  - Configure tor pour qu'il s'exécute au démarrage et empêche l'utilisation de certains pays comme nœuds de sortie
+    - Editez `/etc/tor/torrc` si nécessaire
+  - Installe proxychains
+  - Configure les proxychains pour utiliser tor. Voir [my Medium story](https://fazlearefin.medium.com/tunneling-traffic-over-tor-network-using-proxychains-34c77ec32c0f) pour voir comment l'utiliser
+    - Editez `/etc/proxychains4.conf` si nécessaire
+  - Installe la boîte à outils d'anonymisation des métadonnées
 - **role: security**
-  - installez ClamAV (antivirus) et l'interface ClamAV GNOME. Analyse manuelle à partir de Nautilus ou de la CLI à l'aide de `clamscan`; clamd non installé à cause de son énorme empreinte mémoire
+  - Installe ClamAV (antivirus) et l'interface ClamAV GNOME. Analyse manuelle à partir de Nautilus ou de la CLI à l'aide de `clamscan`; clamd non installé à cause de son énorme empreinte mémoire
 
 ---
 
@@ -104,7 +104,7 @@ cd post-install
 
 ## Step 1 | Exécution des playbooks pour configurer votre système
 
-**Lancez ce qui suit en tant qu'utilisateur principal du système. Ne lancez pas en tant que `root`.**
+**Lancez ce qui suit en tant qu'utilisateur principal du système. Ne le lancez pas en tant que `root`.**
 
 ```bash
 ansible-playbook main.yml -vv -e "{ laptop_mode: True }" -e "local_username=$(id -un)" -K
@@ -112,7 +112,7 @@ ansible-playbook main.yml -vv -e "{ laptop_mode: True }" -e "local_username=$(id
 
 Entrez le mot de passe sudo lorsqu'on vous le demande `BECOME password:`.
 
-Le `main.yml` playbook prendra entre 15 minutes et une heure à compléter.
+Le `main.yml` playbook prendra entre 15 minutes et une heure à finir.
 
 Une fois que tout est fait, donnez une nouvelle vie à votre ordinateur en redémarrant.
 
@@ -120,11 +120,11 @@ Une fois que tout est fait, donnez une nouvelle vie à votre ordinateur en redé
 
 #### Régler ceci sur `True`
 
-- va installer certains packages comme[TLP](https://github.com/linrunner/TLP) pour l'économie de la batterie
+- Va installer certains packages comme [TLP](https://github.com/linrunner/TLP) pour l'économie de la batterie
 
 #### Régler ceci sur `False`
 
-- n'installera PAS certains packages comme [TLP](https://github.com/linrunner/TLP) pour l'économie de la batterie
+- N'installera PAS certains packages comme [TLP](https://github.com/linrunner/TLP) pour l'économie de la batterie
 
 ---
 
