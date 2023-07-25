@@ -8,7 +8,6 @@ Les playbooks doivent s'exécuter sur un système basé sur Debian, mais n'ont �
 - **Ubuntu 22.04**
 - **Pop!_OS 22.04**
 
-Pour les autres versions d'Ubuntu, passez aux autres branches de ce dépôt git. Les autres versions incluent Ubuntu 18.04 LTS et 20.04 LTS.
 
 ![bullet-train-zsh-theme](.images/screenshot-bullet-train.png)
 
