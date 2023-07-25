@@ -103,8 +103,8 @@ You need to install `ansible` and `git` before running the playbooks. You can ei
 And clone this repo (do not clone in `/tmp` as this dir is cleaned and mounted in tmpfs)
 
 ```bash
-git clone https://github.com/fazlearefin/ubuntu-dev-machine-setup.git
-cd ubuntu-dev-machine-setup
+git clone https://github.com/Mounik/post-install.git
+cd post-install
 ```
 
 ## Step 1 | Running the playbooks to configure your system
