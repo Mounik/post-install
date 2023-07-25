@@ -23,6 +23,7 @@ base_developer_tools:
   - 2to3
   - ansible
   - ansible-lint
+  - bat
   - black
   - curl
   - dos2unix
@@ -34,6 +35,7 @@ base_developer_tools:
   - gitg
   - golang-go
   - htop
+  - ncat
   - netcat
   - nmap
   - nodejs

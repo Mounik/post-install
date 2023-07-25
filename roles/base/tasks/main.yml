@@ -155,18 +155,18 @@
     force_apt_get: yes
 
 - block:
-    # - name: accept licence for virtualbox ext pack
-    #   debconf:
-    #     name: "virtualbox-ext-pack"
-    #     question: "virtualbox-ext-pack/license"
-    #     value: "true"
-    #     vtype: "select"
+    - name: accept licence for virtualbox ext pack
+      debconf:
+        name: "virtualbox-ext-pack"
+        question: "virtualbox-ext-pack/license"
+        value: "true"
+        vtype: "select"
 
-    # - name: install virtualization tools
-    #   ansible.builtin.apt:
-    #     name: "{{ base_virtualization_tools }}"
-    #     state: present
-    #     force_apt_get: yes
+    - name: install virtualization tools
+      ansible.builtin.apt:
+        name: "{{ base_virtualization_tools }}"
+        state: present
+        force_apt_get: yes
 
     # add user to docker group to run docker commands without sudo
     # add user to vboxusers group so that user can attach usb devices to guest OS
@@ -177,7 +177,6 @@
         groups:
           - docker
           - vboxusers
-          - podman
 
 - name: Enable permanent night light settings
   ansible.builtin.command: "gsettings set org.gnome.settings-daemon.plugins.color {{ item.key }} {{ item.value }}"
