@@ -32,16 +32,16 @@ Résumé des packages installés et configurés en fonction des rôles :
 - **role: base**
   - Monte `/tmp` sur tmpfs (réduire les écritures en lecture SSD et augmenter la durée de vie du SSD ; pas de fichiers restants à l'arrêt du système)
   - Définit l'éditeur système par défaut sur vim au lieu de nano
-  - Activerle pare-feu ufw et installe l'interface graphique ufw gufw
+  - Active le pare-feu ufw et installe l'interface graphique ufw gufw
   - Désactive les rapports de plantage du système
   - Régle le swap du système afin que le swapping soit considérablement réduit
-  - Mise à niveau tde ous les packages
+  - Mise à niveau de tout les packages
   - Installe des outils d'archivage comme zip, rar, etc.
   - Installe libreoffice
   - Installe des outils de gestion d'alimentation comme [TLP](https://github.com/linrunner/TLP)
   - Installe des packages liés au développement tels que docker, podman, filezilla, golang, pipenv, etc.
   - Configure les répertoires golang
-  - Installerdes outils de téléchargement comme transmission, wget
+  - Installe des outils de téléchargement comme transmission, wget
   - Installe des packages image, audio et vidéo comme vlc, gimp, imagemagick.
   - Installe des outils de virtualisation comme virtualbox, docker, docker-compose, podman
   - Installe et configure le serveur ssh s'il n'est pas défini sur `laptop_mode`
