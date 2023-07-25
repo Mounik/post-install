@@ -2,152 +2,143 @@
 
 ## Description
 
-This repo contains Ansible playbooks to configure your system as a development machine upon a clean install.
+Ce référentiel contient des playbooks Ansible pour configurer votre système en tant que machine de développement lors d'une nouvelle installation.
 
-The playbooks should run in Debian based system but was only tested with:
+Les playbooks doivent s'exécuter sur un système basé sur Debian, mais n'ont été testés qu'avec :
 - **Ubuntu 22.04**
 - **Pop!_OS 22.04**
 
-For other versions of Ubuntu, change to the other branches of this git repo. Other versions include Ubuntu 18.04 LTS and 20.04 LTS.
+Pour les autres versions d'Ubuntu, passez aux autres branches de ce dépôt git. Les autres versions incluent Ubuntu 18.04 LTS et 20.04 LTS.
 
 ![bullet-train-zsh-theme](.images/screenshot-bullet-train.png)
 
-Screenshot above is using *bullet-train zsh theme*
+La capture d'écran ci-dessus utilise *bullet-train zsh theme*
 
 ![pure-zsh-theme](.images/screenshot-pure.png)
 
-Screenshot above is using *pure zsh theme*
+La capture d'écran ci-dessus utilise *pure zsh theme*
 
 ![p10k-zsh-theme-tmux](.images/screenshot-p10k-tmux.png)
 
-Screenshot above is using *p10k zsh theme with tmux*
+La capture d'écran ci-dessus utilise *p10k zsh theme with tmux*
 
 ---
 
-## What gets installed and configured?
+## Qu'est-ce qui est installé et configuré ?
 
-I am a DevSecOps Engineer (focusing on Linux) and my daily job include working with various config management using Ansible. So if you are in a similar profession the installed system will suit your needs. It is also easy to extend using Ansible roles.
+Je suis un ingénieur DevSecOps (axé sur Linux) et mon travail quotidien consiste à travailler avec diverses gestions de configuration à l'aide d'Ansible. Donc, si vous êtes dans une profession similaire, le système installé répondra à vos besoins. Il est également facile d'étendre l'utilisation des rôles Ansible.
 
-Summary of packages that get installed and configured based on roles:
+Résumé des packages installés et configurés en fonction des rôles :
 
 - **role: base**
-  - mount `/tmp` on tmpfs (reduce SSD read writes and increase SSD lifespan; no leftover files on system shutdown)
-  - set default system editor to vim instead of nano
-  - enable ufw firewall and install ufw graphical frontend gufw
-  - disable system crash reports
-  - tune system swappiness so that swapping is greatly reduced
-  - upgrade all packages
-  - install archiving tools like zip, rar, etc
-  - install libreoffice
-  - install power management tools like [TLP](https://github.com/linrunner/TLP)
-  - install development related packages like android-tools, awscli, httpie, clusterssh, docker, filezilla, golang, pipenv, etc
-  - setup golang directories
-  - install download tools like axel, transmission, wget, aria2
-  - install image, audio and video packages like vlc, totem, gimp, imagemagick, etc
-  - install virtualization tools like virtualbox, docker, docker-compose
-  - install and configure ssh server if not set to `laptop_mode`
-  - option to turn on night light settings for eye comfort (set `base_permanent_night_light.night_light_enabled` to `True`)
-  - enable `fzf` fuzzy finder in zsh terminal; check out this [YouTube video](https://www.youtube.com/watch?v=1a5NiMhqAR0) to see how to use it
+  - monter `/tmp` sur tmpfs (réduire les écritures en lecture SSD et augmenter la durée de vie du SSD ; pas de fichiers restants à l'arrêt du système)
+  - définir l'éditeur système par défaut sur vim au lieu de nano
+  - activer le pare-feu ufw et installer l'interface graphique ufw gufw
+  - désactiver les rapports de plantage du système
+  - régler le swap du système afin que le swapping soit considérablement réduit
+  - mettre à niveau tous les packages
+  - installer des outils d'archivage comme zip, rar, etc.
+  - installer libreoffice
+  - installer des outils de gestion de l'alimentation comme [TLP](https://github.com/linrunner/TLP)
+  - installer des packages liés au développement tels que docker, podman, filezilla, golang, pipenv, etc.
+  - configurer les répertoires golang
+  - installer des outils de téléchargement comme transmission, wget
+  - installer des packages image, audio et vidéo comme vlc, gimp, imagemagick.
+  - installer des outils de virtualisation comme virtualbox, docker, docker-compose
+  - installer et configurer le serveur ssh s'il n'est pas défini sur `laptop_mode`
+  - possibilité d'activer les paramètres de luminosité pour le confort des yeux (régler `base_permanent_night_light.night_light_enabled` à `True`)
+
 - **role: hashicorp**
-  - install vagrant, terraform, packer
+  - installer vagrant et terraform
 - **role: terminal_customizations**
-  - download and install some nerd fonts from ryanoasis/nerd-fonts; these are mono fonts ideal for use in terminal or programming editors
-  - copy and enable sample tilix config file with configured nerd font
-  - copy and enable sample tmux config file if one does not exist
-  - copy and enable sample `~/.tmux.conf` file with powerline status bar and mouse support!
-    - open Tilix terminal and run `tmux` command, or enable custom command option in Tilix
-    - edit `~/.tmux.conf` if necessary
+  - téléchargez et installez des polices à partir de ryanoasis/nerd-fonts ; ce sont des polices mono idéales pour une utilisation dans les éditeurs de terminaux ou de programmation
+  - copier et activer un exemple de fichier de configuration tilix avec la police nerd configurée
 - **role: vim**
-  - install vim packages
-  - install amix/vimrc vim distribution
-  - create sample vim customization file in `~/.vim_runtime/my_configs.vim`
-    - additional vim settings are enabled in `~/.vim_runtime/my_configs.vim` which are not part of the Vim Distribution. Edit this file if necessary.
+  - installer les paquets vim
+  - installer amix/vimrc distribution vim
+  - créer un exemple de fichier de personnalisation vim dans `~/.vim_runtime/my_configs.vim`
+    - des paramètres vim supplémentaires sont activés dans `~/.vim_runtime/my_configs.vim` qui ne font pas partie de la distribution Vim. Modifiez ce fichier si nécessaire.
 - **role: zsh**
-  - install zsh package and set user shell to zsh
-  - install antigen zsh plugin manager
-  - copy and enable sample `~/.zshrc` file if one does not exist
-    - contains function to stop ssh-agent from asking for encrypted ssh key password repeatedly when launching new terminal
-  - install ohmyzsh/ohmyzsh and enable some bundled plugins
-  - enable bullet train zsh theme (others like p10k can be configured as well)
+  - installez le package zsh et définissez le shell utilisateur sur zsh
+  - installer le gestionnaire de plugin antigen zsh
+  - copier et activer `~/.zshrc` fichier s'il n'existe pas
+    - contient une fonction pour empêcher ssh-agent de demander à plusieurs reprises le mot de passe de la clé ssh cryptée lors du lancement d'un nouveau terminal
+  - installez ohmyzsh/ohmyzsh et activez certains plugins
+  - activer le thème zsh powerlevel10k
 - **role: googlechrome**
-  - add Google Chrome apt repo
-  - install Google Chrome
+  - ajouter le référentiel Google Chrome apt
+  - installer Google Chrome
 - **role: vscode**
-  - add Visual Studio Code apt repo
-  - install Visual Studio Code
-  - install some popular Visual Studio Code extensions
+  - ajouter le référentiel apt Visual Studio Code
+  - installer Visual Studio Code
+  - installer certaines extensions populaires de Visual Studio Code
 - **role: privacy**
-  - install tor
-  - configure tor to run at boot and prevent using certain countries as exit nodes
-    - edit `/etc/tor/torrc` if necessary
-  - install proxychains
-  - configure proxychains to use tor. View [my Medium story](https://fazlearefin.medium.com/tunneling-traffic-over-tor-network-using-proxychains-34c77ec32c0f) to see how to use it
-    - edit `/etc/proxychains4.conf` if necessary
-  - install metadata anonymization toolkit
+  - installer tor
+  - configurer tor pour qu'il s'exécute au démarrage et empêche l'utilisation de certains pays comme nœuds de sortie
+    - editer `/etc/tor/torrc` si nécessaire
+  - installer proxychains
+  - configurer les proxychains pour utiliser tor. Voir [my Medium story](https://fazlearefin.medium.com/tunneling-traffic-over-tor-network-using-proxychains-34c77ec32c0f) pour voir comment l'utiliser
+    - editer `/etc/proxychains4.conf` si nécessaire
+  - installer la boîte à outils d'anonymisation des métadonnées
 - **role: security**
-  - install ClamAV (antivirus) and ClamAV GNOME interface. Manual scan from nautilus or from CLI using `clamscan`; clamd not installed for its huge memory footprint
+  - installez ClamAV (antivirus) et l'interface ClamAV GNOME. Analyse manuelle à partir de Nautilus ou de la CLI à l'aide de `clamscan`; clamd non installé à cause de son énorme empreinte mémoire
 
 ---
 
-## Step 0 | Pre-requisites for running the ansible playbooks
+## Step 0 | Prérequis pour exécuter les playbooks ansible
 
-On the system which you are going to setup using Ansible, perform these steps.
+Sur le système que vous allez configurer à l'aide d'Ansible, effectuez ces étapes.
 
-You need to install `ansible` and `git` before running the playbooks. You can either install it using `pip` or `apt`.
+Vous devez installer `ansible` et `git` avant d'exécuter les playbooks. Vous pouvez soit l'installer en utilisant`pip` ou `apt`.
 
 ```bash
-/usr/bin/sudo apt update
-/usr/bin/sudo apt install ansible git -y
+sudo apt update
+sudo apt install ansible git -y
 ```
 
-And clone this repo (do not clone in `/tmp` as this dir is cleaned and mounted in tmpfs)
+Et clonez ce dépôt (ne clonez pas dans `/tmp` car ce répertoire est nettoyé et monté dans tmpfs)
 
 ```bash
 git clone https://github.com/Mounik/post-install.git
 cd post-install
 ```
 
-## Step 1 | Running the playbooks to configure your system
+## Step 1 | Exécution des playbooks pour configurer votre système
 
-**Invoke the following as yourself, the primary user of the system. Do not run as `root`.**
+**Lancez ce qui suit en tant qu'utilisateur principal du système. Ne lancez pas en tant que `root`.**
 
 ```bash
 ansible-playbook main.yml -vv -e "{ laptop_mode: True }" -e "local_username=$(id -un)" -K
 ```
 
-Enter the sudo password when asked for `BECOME password:`.
+Entrez le mot de passe sudo lorsqu'on vous le demande `BECOME password:`.
 
-The `main.yml` playbook will take anything from 15 minutes to an hour to complete.
+Le `main.yml` playbook prendra entre 15 minutes et une heure à compléter.
 
-After all is done, give your laptop a new life by rebooting.
+Une fois que tout est fait, donnez une nouvelle vie à votre ordinateur en redémarrant.
 
-> ### What is this `laptop_mode`?
+> ### Qu'est-ce que c'est`laptop_mode`?
 
-#### Setting this to `True`
+#### Régler ceci sur `True`
 
-- will install some packages like [TLP](https://github.com/linrunner/TLP) for battery economy
+- va installer certains packages comme[TLP](https://github.com/linrunner/TLP) pour l'économie de la batterie
 
-#### Setting this to `False`
+#### Régler ceci sur `False`
 
-- will NOT install some packages like [TLP](https://github.com/linrunner/TLP) for battery economy
-
----
-
-## Known Issues
-
-- If the ansible playbook halts after completing a few tasks, simply run the playbook again. Since most of the tasks are idempotent, running the playbook multiple times won't break anything.
-- If your terminal shows any weird characters because of installing one of the zsh themes, simply change the font to a suitable Nerd Font from the terminal's settings.
-- If you do not like the fuzzy finder completions in your terminal, remove or comment out the `#fzf` lines in your `~/.zshrc` (this is not a known issue but a feature)
+- n'installera PAS certains packages comme [TLP](https://github.com/linrunner/TLP) pour l'économie de la batterie
 
 ---
 
-## Pull Requests and Forks
+## Problèmes connus
 
-You are more than welcome to send any pull requests. However, the intention of this repo is to suit my development needs. So it might be better if you *fork* this repo instead for your own needs and personalization.
+- Si le playbook ansible s'arrête après avoir terminé quelques tâches, exécutez simplement le playbook à nouveau. Étant donné que la plupart des tâches sont idempotentes, exécuter le playbook plusieurs fois ne cassera rien.
+- Si votre terminal affiche des caractères étranges en raison de l'installation de l'un des thèmes zsh, changez simplement la police en une police appropriée à partir des paramètres du terminal.
 
 ---
 
-## Donations
+## Pull Requests et Forks
 
-If you think my work helped you in some way saving you time and effort, I am happy to receive any amount of donation. However, the code in this repo is completely free; absolutely *no strings attached*.
+Vous êtes plus que bienvenu pour envoyer des pull requests. Cependant, l'intention de ce dépôt est de répondre à mes besoins de développement. Il serait donc préférable que vous *forkiez* ce référentiel à la place pour vos propres besoins et personnalisation.
+
+---
 

@@ -2,6 +2,7 @@
 
 base_archiving_tools:
   - unzip
+  - rar
 
 base_productivity_tools:
   - libreoffice
@@ -17,19 +18,15 @@ base_system_tools_laptop:
 base_download_tools:
   - transmission
   - wget
-  - youtube-dl
 
 base_developer_tools:
   - 2to3
   - ansible
   - ansible-lint
   - black
-  - colordiff
   - curl
-  - default-jre-headless
   - dos2unix
   - filezilla
-  - fonts-powerline
   - gedit-plugins
   - ghostwriter
   - git
@@ -41,7 +38,6 @@ base_developer_tools:
   - nmap
   - nodejs
   - pandoc
-  - parallel
   - pep8
   - pylint
   - python3-cachecontrol
@@ -67,17 +63,15 @@ base_developer_tools_pip3:
   - tldr
 
 base_virtualization_tools:
-  # - virtualbox
-  # - virtualbox-ext-pack
+  - virtualbox
+  - virtualbox-ext-pack
   - docker.io
   - docker-compose
   - podman
 
 base_media_tools:
-  - ffmpeg
   - gimp
   - imagemagick
-  - totem
 #  - ubuntu-restricted-extras
   - vlc
 
