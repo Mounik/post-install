@@ -5,9 +5,9 @@
 Ce référentiel contient des playbooks Ansible pour configurer votre système en tant que machine de développement lors d'une nouvelle installation.
 
 Les playbooks doivent s'exécuter sur un système basé sur Debian, mais n'ont été testés qu'avec :
+
 - **Ubuntu 22.04**
 - **Pop!_OS 22.04**
-
 
 ![bullet-train-zsh-theme](.images/screenshot-bullet-train.png)
 
@@ -140,4 +140,3 @@ Une fois que tout est fait, donnez une nouvelle vie à votre ordinateur en redé
 Vous êtes plus que bienvenu pour envoyer des pull requests. Cependant, l'intention de ce dépôt est de répondre à mes besoins de développement. Il serait donc préférable que vous *forkiez* ce référentiel à la place pour vos propres besoins et personnalisation.
 
 ---
-

@@ -39,11 +39,11 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 # powerlevel10k theme
 # https://github.com/romkatv/powerlevel10k
-antigen theme romkatv/powerlevel10k
+#antigen theme romkatv/powerlevel10k
 
 # bullet train theme
 # https://github.com/caiogondim/bullet-train.zsh
-#antigen theme caiogondim/bullet-train.zsh bullet-train
+antigen theme caiogondim/bullet-train.zsh bullet-train
 
 # Tell antigen that you're done.
 antigen apply
@@ -134,5 +134,5 @@ export VAGRANT_DEFAULT_PROVIDER='virtualbox'
 [ -f ~/.shell_variables ] && source ~/.shell_variables
 
 # enable fzf fuzzy finder completions in the terminal
-# [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh    #fzf
-# [ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh        #fzf
+[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh    #fzf
+[ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh        #fzf

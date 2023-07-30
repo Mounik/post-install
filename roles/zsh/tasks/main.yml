@@ -28,7 +28,7 @@
         src: .zshrc
         dest: "~{{ local_username }}/.zshrc"
         force: yes
-  become: true
+  become: yes
   become_user: "{{ local_username }}"
 
 ...
