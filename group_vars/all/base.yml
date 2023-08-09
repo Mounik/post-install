@@ -141,6 +141,7 @@ base_virtualization_tools:
   - virtualbox-ext-pack
   - docker.io
   - docker-compose
+  - podman
 
 base_media_tools:
   - ffmpeg
