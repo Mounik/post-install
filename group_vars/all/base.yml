@@ -81,6 +81,8 @@ base_developer_tools:
   - ipython3
   - jq
   - kwalify
+  - librrd-dev
+  - libpython3-dev
   - makeself
   - meld
   - miller
