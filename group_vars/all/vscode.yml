@@ -25,5 +25,6 @@ vscode_extensions:
   - ms-ceintl.vscode-language-pack-fr
   - oderwat.indent-rainbow
   - emmanuelbeziat.vscode-great-icons
+  - foxundermoon.shell-format
 
 ...
