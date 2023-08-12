@@ -81,8 +81,8 @@ base_developer_tools:
   - ipython3
   - jq
   - kwalify
-  - librrd-dev
-  - libpython3-dev
+  - librrd-dev # rrdtool
+  - libpython3-dev # rrdtool
   - makeself
   - meld
   - miller
@@ -126,6 +126,7 @@ base_developer_tools:
   - sshfs
   - sshpass
   - sshuttle
+  - sysstat # nano /etc/default/sysstat passer a true pour activer (+ systemctl enable & start)
   - tig
   - tilix
   - tmux
