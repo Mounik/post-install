@@ -107,7 +107,7 @@ cd post-install
 **Lancez ce qui suit en tant qu'utilisateur principal du système. Ne le lancez pas en tant que `root`.**
 
 ```bash
-ansible-playbook main.yml -vv -e "{ laptop_mode: True }" -e "local_username=$(id -un)" -K
+ansible-playbook main.yml -vv -e "{ laptop_mode: False }" -e "local_username=$(id -un)" -K
 ```
 
 Entrez le mot de passe sudo lorsqu'on vous le demande `BECOME password:`.
